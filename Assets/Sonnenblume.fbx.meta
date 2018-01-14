@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: 17b72c99fc3f58a45880c7e5f1a41cd3
+timeCreated: 1515915118
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature.plant
+    100002: bottom
+    100004: con.eyes
+    100006: con.eyes.l
+    100008: con.eyes.l_end
+    100010: con.eyes.r
+    100012: con.eyes.r_end
+    100014: eyeball.l
+    100016: eyeball.l_end
+    100018: eyeball.r
+    100020: eyeball.r_end
+    100022: leaf.bottom
+    100024: leaf.bottom_end
+    100026: leaf.left
+    100028: leaf.left_end
+    100030: leaf.right
+    100032: leaf.right_end
+    100034: leave.top
+    100036: leave.top_end
+    100038: //RootNode
+    100040: Plant
+    100042: Plant_MeshPart0
+    100044: Plant_MeshPart1
+    100046: root.head
+    100048: root1
+    100050: root2
+    100052: root3
+    100054: root4
+    100056: Camera
+    100058: Point
+    400000: Armature.plant
+    400002: bottom
+    400004: con.eyes
+    400006: con.eyes.l
+    400008: con.eyes.l_end
+    400010: con.eyes.r
+    400012: con.eyes.r_end
+    400014: eyeball.l
+    400016: eyeball.l_end
+    400018: eyeball.r
+    400020: eyeball.r_end
+    400022: leaf.bottom
+    400024: leaf.bottom_end
+    400026: leaf.left
+    400028: leaf.left_end
+    400030: leaf.right
+    400032: leaf.right_end
+    400034: leave.top
+    400036: leave.top_end
+    400038: Plant
+    400040: //RootNode
+    400042: Plant_MeshPart0
+    400044: Plant_MeshPart1
+    400046: root.head
+    400048: root1
+    400050: root2
+    400052: root3
+    400054: root4
+    400056: Camera
+    400058: Point
+    2000000: Camera
+    4300000: Plant_MeshPart0
+    4300002: Plant_MeshPart1
+    4300004: Plant
+    7400000: Armature.plant|IDLE
+    9500000: //RootNode
+    10800000: Point
+    13700000: Plant_MeshPart0
+    13700002: Plant_MeshPart1
+    13700004: Plant
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Auge
+    second: {fileID: 2100000, guid: 60c38cb6d92f0ae41ad61710f80db1cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blatt
+    second: {fileID: 2100000, guid: cb5d5cebddaf060408e9d63db04794bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boden
+    second: {fileID: 2100000, guid: 75f5dec6b1f834745810dcc30f1af110, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kopf
+    second: {fileID: 2100000, guid: 185ef2f4cd8ddaa48a22614a3087cdd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pupille
+    second: {fileID: 2100000, guid: baecfce04a2777f4fb6e504db9851a97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stange
+    second: {fileID: 2100000, guid: d9952424d44800144bd7633c0fb5d16a, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature.plant|IDLE
+      takeName: Armature.plant|IDLE
+      firstFrame: 0
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
