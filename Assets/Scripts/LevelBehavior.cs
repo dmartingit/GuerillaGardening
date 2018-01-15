@@ -7,48 +7,54 @@ public class LevelBehavior : MonoBehaviour {
 	public List<Plant> plants;
 	public List<Wave> waves;
 	public List<Banana> bananas;
-	public float waveStartDelay;
-	public float nextWaveDelay;
+
 	private float timer;
+	private UITooltipHelper tooltipHelper;
 
 	void Start () {
-		/*if (waves.Count == 0) {
+		this.tooltipHelper = this.gameObject.AddComponent (typeof(UITooltipHelper)) as UITooltipHelper;
+
+		GameStats.plantList = this.plants;
+		GameStats.bananaList = this.bananas;
+
+		if (this.waves.Count == 0) {
 			return;
-		}*/
+		}
 
-		GameStats.currentWave = 0;
-		GameStats.waves = waves.Count;
-		//timer = waves[0].time;
+		GameStats.wave = 0;
+		GameStats.waveList = this.waves;
+		this.timer = this.waves[0].time;
 
-		GameStats.plantList = plants;
-		GameStats.bananaList = bananas;
+		this.tooltipHelper.SetText ("Wave 1");
+		this.tooltipHelper.Draw ();
 	}
 
 	void Update () {
-		if (waves.Count == 0) {
+		if (this.waves.Count == 0) {
 			return;
 		}
 
-		if (GameStats.currentWave == GameStats.waves) {
+		if (GameStats.wave == this.waves.Count) {
 			return;
 		}
 
-		timer -= Time.deltaTime;
-		if (timer < 0) {
+		this.timer -= Time.deltaTime;
+		if (this.timer < 0) {
 			// Next Wave
-			++GameStats.currentWave;
+			++GameStats.wave;
 
 			// Do not do shit if last wave is done
-			if (GameStats.currentWave == GameStats.waves) {
+			if (GameStats.wave == this.waves.Count) {
+				// TODO(dmartin): load next level
 				return;
 			}
 
-			// Update Enemies
-			GameStats.gorillaList.Clear ();
-			GameStats.gorillaList = waves[GameStats.currentWave].gorillas;
+			// Show GUI
+			this.tooltipHelper.SetText ("Wave " + (GameStats.wave + 1).ToString());
+			this.tooltipHelper.Draw();
 
 			// Reset Timer
-			timer = waves[GameStats.currentWave].time;
+			this.timer = this.waves[GameStats.wave].time;
 		}
 	}
 }

@@ -10,11 +10,12 @@ public class PlantSpawnBehavior : MonoBehaviour {
 	}
 
 	void Update () {
+		// Check if there is smth already planted
 		var atTop = this.transform.TransformDirection (new Vector3 (0, 1, 0));
 		if (Physics.Raycast (this.transform.position, atTop, 2)) {
-			canPlant = false;
+			this.canPlant = false;
 		} else {
-			canPlant = true;
+			this.canPlant = true;
 		}
 	}
 
@@ -26,7 +27,7 @@ public class PlantSpawnBehavior : MonoBehaviour {
 		Plant plant = GameStats.selectedPlant;
 
 		// No plant was selected
-		if (plant == null) {
+		if (plant.Equals(default(Plant))) {
 			return;
 		}
 
@@ -37,9 +38,12 @@ public class PlantSpawnBehavior : MonoBehaviour {
 
 		GameStats.seeds -= plant.cost;
 
+		// Instantiate plant with values
 		Vector3 topPos = this.transform.position;
 		topPos.y += 1f;
-		Instantiate (plant.model, topPos, Quaternion.identity);
+		var go = Instantiate (plant.model, topPos, Quaternion.identity).gameObject;
+		var plantScript = (PlantBehavior)go.AddComponent (typeof(PlantBehavior));
+		plantScript.plant = plant;
 	}
 
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class Banana {
+public struct Banana {
 	public Transform model;
 }

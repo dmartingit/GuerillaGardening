@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
 [System.Serializable]
-public class Wave {
+public struct Wave {
 	public List<Gorilla> gorillas;
-	public float spawnDelayMin;
-	public float spawnDelayMax;
+	public float spawnRateMin;
+	public float spawnRateMax;
 	public float time;
 }

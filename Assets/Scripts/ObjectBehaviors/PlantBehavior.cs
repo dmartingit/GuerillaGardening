@@ -2,10 +2,12 @@
 
 public class PlantBehavior : MonoBehaviour {
 
-	public void Start() {
+	public Plant plant;
+
+	void Start () {
 	}
 
-	public void Update() {
+	void Update () {
 	}
 
 }

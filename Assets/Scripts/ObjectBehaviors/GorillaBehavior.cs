@@ -2,10 +2,10 @@
 
 public class GorillaBehavior : MonoBehaviour {
 
-	public void Start() {
+	void Start () {
 	}
 
-	public void Update() {
+	void Update () {
 	}
 
 }
