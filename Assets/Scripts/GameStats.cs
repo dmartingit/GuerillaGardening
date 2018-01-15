@@ -3,6 +3,10 @@ using UnityEngine;
 
 public static class GameStats {
 
+	public enum GameState {InGame, GameOver, LevelComplete};
+
+	public static GameState state;
+
 	public static int wave;
 
 	public static int seeds;

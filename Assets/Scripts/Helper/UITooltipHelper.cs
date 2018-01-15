@@ -6,8 +6,9 @@ public class UITooltipHelper : MonoBehaviour {
 
 	private string labelText;
 	private Color labelColor = Color.white;
-	private int labelFontSize = 24;
-	private float labelFadingSpeed = 0.1f;
+	private int labelFontSize = 72;
+	private float labelFadingSpeed = 0.02f;
+	private float labelFadingRate = 0.1f;
 	private float labelAlpha;
 
 	void Start () {
@@ -45,10 +46,14 @@ public class UITooltipHelper : MonoBehaviour {
 		this.labelFadingSpeed = fadingSpeed;
 	}
 
+	public void SetFadingRate (float fadingRate) {
+		this.labelFadingRate = fadingRate;
+	}
+
 	IEnumerator Fade() {
-		for (var f = 1f; f >= 0f; f -= 0.05f) {
+		for (var f = 1f; f >= 0f; f -= this.labelFadingSpeed) {
 			this.labelAlpha = f;
-			yield return new WaitForSeconds (this.labelFadingSpeed);
+			yield return new WaitForSeconds (this.labelFadingRate);
 		}
 		this.labelAlpha = 0f;
 	}

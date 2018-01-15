@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GorillaSpawnBehavior : MonoBehaviour {
 	
@@ -16,11 +14,14 @@ public class GorillaSpawnBehavior : MonoBehaviour {
 			return;
 		}
 
-		var model = gorillaList [Random.Range (0, gorillaList.Count - 1)].model;
+		var gorilla = gorillaList [Random.Range (0, gorillaList.Count)];
 
+		// Instantiate gorilla
 		Vector3 topPos = this.transform.position;
-		topPos.y += 1f;
-		Instantiate (model, topPos, Quaternion.identity);
+		topPos.y += 0.5f;
+		var go = Instantiate (gorilla.model, topPos, Quaternion.Euler(new Vector3(0, -90, 0))).gameObject;
+		var gorillaScript = gorilla.model.GetComponent(typeof(GorillaBehavior)) as GorillaBehavior;
+		gorillaScript.gorilla = gorilla;
 	}
 
 }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Gorilla.unity
+- path: Assets/Scenes/debugLevel.unity
   isLoaded: 1
   isActive: 1

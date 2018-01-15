@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BananaSpawnBehavior : MonoBehaviour {
 
@@ -19,7 +17,7 @@ public class BananaSpawnBehavior : MonoBehaviour {
 			return;
 		}
 		Vector3 topPos = this.transform.position;
-		topPos.y += 1f;
+		topPos.y += 0.75f;
 		var model = bananaList [Random.Range (0, bananaList.Count - 1)].model;
 		Instantiate (model, topPos, Quaternion.identity);
 		this.spawned = true;
