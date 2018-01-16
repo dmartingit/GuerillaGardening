@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MeleeGorillaBehavior : GorillaBehavior {
+public class MeleePlantBehavior : PlantBehavior {
 
 	private new Collider collider;
 	private Animator animator;
@@ -12,7 +12,7 @@ public class MeleeGorillaBehavior : GorillaBehavior {
 
 		this.collider = GetComponentInChildren<Collider> ();
 		this.animator = GetComponent<Animator> ();
-		this.attackTimer = this.gorilla.attackspeed;
+		this.attackTimer = this.plant.attackspeed;
 	}
 
 	protected override void Update () {
@@ -22,14 +22,14 @@ public class MeleeGorillaBehavior : GorillaBehavior {
 		var centerPos = this.collider.bounds.center;
 		var fwd = this.transform.forward;
 		RaycastHit hit;
-		if (Physics.Raycast (centerPos, fwd, out hit, this.gorilla.bullet.range) && (hit.collider.tag == "Plant")) {
+		if (Physics.Raycast (centerPos, fwd, out hit, this.plant.bullet.range) && (hit.collider.tag == "Gorilla")) {
 			this.hittedGameObject = hit.collider.gameObject;
 		}
 
 		if (this.hittedGameObject == null) {
 			// Movement
-			if (this.gorilla.movementspeed != 0) {
-				this.transform.Translate ((Vector3.forward * Time.deltaTime) * this.gorilla.movementspeed);
+			if (this.plant.movementspeed != 0) {
+				this.transform.Translate ((Vector3.forward * Time.deltaTime) * this.plant.movementspeed);
 			}
 
 			// Reset Attack Animation
@@ -39,19 +39,19 @@ public class MeleeGorillaBehavior : GorillaBehavior {
 		this.attackTimer -= Time.deltaTime;
 		if (this.attackTimer < 0) {
 			// Reset Timer
-			this.attackTimer = this.gorilla.attackspeed;
+			this.attackTimer = this.plant.attackspeed;
 
 			if (this.hittedGameObject == null) {
 				return;
 			}
 
 			// Set Attack Animation
-			this.animator.speed = 1 / this.gorilla.attackspeed;
+			this.animator.speed = 1 / this.plant.attackspeed;
 			this.animator.SetBool ("Attack", true);
 
 			// Damage Calculation
-			var plantScript = this.hittedGameObject.GetComponentInParent(typeof(PlantBehavior)) as PlantBehavior;
-			plantScript.plant.health -= this.gorilla.bullet.damage;
+			var gorillaScript = this.hittedGameObject.GetComponentInParent(typeof(GorillaBehavior)) as GorillaBehavior;
+			gorillaScript.gorilla.health -= this.plant.bullet.damage;
 		}
 	}
 

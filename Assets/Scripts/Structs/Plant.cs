@@ -9,5 +9,6 @@ public struct Plant {
 	public int cost;
 	public int health;
 	public float attackspeed;
+	public float movementspeed;
 	public float gemSpawnRate;
 }

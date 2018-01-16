@@ -107,10 +107,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 957
-  m_MinSize: {x: 709, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 711, y: 492}
+  m_MaxSize: {x: 18006, y: 14042}
   vertical: 0
-  controlID: 15912
+  controlID: 11
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 15913
+  controlID: 12
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -231,8 +231,8 @@ MonoBehaviour:
     y: 0
     width: 445
     height: 957
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -344,7 +344,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 4259dfffd45bdfff5a5edfffc6e4e1ff82f1e1ff46f5e1ff7af6e1ff169ae4ff7445e5ff9e48e5ff8406e8ffa80fe8ffa4e8e8ff887cebff728debfff200edff8822edffd249edffd4f4f3ffd400f4ff48f0f4ff3285f5ff8cd6f5ff3e3ff6ff5879faff427afaff048ffaffc882fbffb683fbff60c6fbffb428fcff9461fcff546ffcff44c6fcff42e9fcff7eb7fdff5ce8fdffceacffff14c9ffff6cdbffff00000000
+    m_ExpandedIDs: 6a57feff888efeff2090feff94affeffecb1feff0ecbfeffe2fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -424,13 +424,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.21683636, y: 0.007579559, z: -0.0016986169, w: 0.97622555}
+    m_Target: {x: 0.12619066, y: -0.09185893, z: 0.011717457, w: 0.9877255}
     speed: 2
-    m_Value: {x: 0.2168261, y: 0.0075792004, z: -0.0016985364, w: 0.97617936}
+    m_Value: {x: 0.12618428, y: -0.09185429, z: 0.011716865, w: 0.98767555}
   m_Size:
-    m_Target: 7.0032463
+    m_Target: 8.415854
     speed: 2
-    m_Value: 7.0032463
+    m_Value: 8.415854
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -531,19 +531,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs/Banana
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Prefabs/Banana
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity Projects\GuerillaGardening
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 169}
-    m_SelectedIDs: c4310000
-    m_LastClickedID: 12740
-    m_ExpandedIDs: 000000009e310000c2310000e0310000e8310000ee3100000632000094a1010000ca9a3bffffff7f
+    m_SelectedIDs: ae260000
+    m_LastClickedID: 9902
+    m_ExpandedIDs: 00000000f2240000162500005e250000b62500000626000084260000c42b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -571,7 +571,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009e310000e0310000e8310000ee3100000632000094a1010000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000f2240000162500005e250000b62500000626000084260000c42b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

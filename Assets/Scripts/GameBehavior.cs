@@ -36,7 +36,7 @@ public class GameBehavior : MonoBehaviour {
 
 	void OnGUI() {
 		GUILayout.BeginHorizontal ();
-		GUILayout.Label("Wave: " + GameStats.wave.ToString () + " Seeds: " + GameStats.seeds.ToString ());
+		GUILayout.Label("Wave: " + (GameStats.wave + 1).ToString () + " Seeds: " + GameStats.seeds.ToString ());
 		for (var i = 0; i < GameStats.plantList.Count; ++i) {
 			Plant plant = GameStats.plantList [i];
 			if (GUILayout.Toggle (this.selectedPlant == i, plant.name + " (" + plant.cost.ToString() + ")")) {
@@ -82,7 +82,7 @@ public class GameBehavior : MonoBehaviour {
 			}
 
 			// Show GUI
-			this.tooltipHelper.SetText ("Wave " + GameStats.wave.ToString());
+			this.tooltipHelper.SetText ("Wave " + (GameStats.wave + 1).ToString());
 			this.tooltipHelper.Draw();
 
 			// Reset Timer

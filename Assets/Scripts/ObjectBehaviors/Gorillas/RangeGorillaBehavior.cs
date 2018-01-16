@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class RangePlantBehavior : PlantBehavior {
-	
+public class RangeGorillaBehavior : GorillaBehavior {
+
 	private new Collider collider;
 	private Animator animator;
 	private float attackTimer;
@@ -11,7 +11,7 @@ public class RangePlantBehavior : PlantBehavior {
 
 		this.collider = GetComponentInChildren<Collider> ();
 		this.animator = GetComponent<Animator> ();
-		this.attackTimer = this.plant.attackspeed;
+		this.attackTimer = this.gorilla.attackspeed;
 	}
 
 	protected override void Update () {
@@ -22,22 +22,22 @@ public class RangePlantBehavior : PlantBehavior {
 			var centerPos = this.collider.bounds.center;
 			var fwd = this.transform.forward;
 			RaycastHit hit;
-			if (Physics.Raycast (centerPos, fwd, out hit, this.plant.bullet.range, 1<<9) && (hit.collider.tag == "Gorilla")) {
+			if (Physics.Raycast (centerPos, fwd, out hit, this.gorilla.bullet.range, 1<<8) && (hit.collider.tag == "Plant")) {
 				// Set Attack Animation
-				this.animator.speed = 1 / this.plant.attackspeed;
+				this.animator.speed = 1 / this.gorilla.attackspeed;
 				this.animator.SetBool ("Attack", true);
 
 				// Should Attack
-				var go = Instantiate (this.plant.bullet.model, centerPos, Quaternion.Euler (new Vector3 (0, 90, 0))).gameObject;
+				var go = Instantiate (this.gorilla.bullet.model, centerPos, Quaternion.Euler (new Vector3 (0, -90, 0))).gameObject;
 				var bulletScript = go.GetComponent (typeof(BulletBehavior)) as BulletBehavior;
-				bulletScript.bullet = this.plant.bullet;
+				bulletScript.bullet = this.gorilla.bullet;
 			} else {
 				// Reset Attack Animation
 				this.animator.SetBool ("Attack", false);
 			}
 
 			// Reset Timer
-			this.attackTimer = this.plant.attackspeed;
+			this.attackTimer = this.gorilla.attackspeed;
 		}
 	}
 }
