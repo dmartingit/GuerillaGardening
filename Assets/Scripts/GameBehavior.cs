@@ -10,14 +10,10 @@ public class GameBehavior : MonoBehaviour {
 	public List<Wave> waves;
 	public List<Banana> bananas;
 
-	private int selectedPlant;
 	private float nextWaveTime;
 	private float gorillaSpawnTimer;
-	private UITooltipHelper tooltipHelper;
 	
 	void Start () {
-		this.tooltipHelper = this.gameObject.AddComponent (typeof(UITooltipHelper)) as UITooltipHelper;
-
 		GameStats.state = GameStats.GameState.InGame;
 		GameStats.seeds = this.seeds;
 		GameStats.wave = -1;
@@ -29,29 +25,31 @@ public class GameBehavior : MonoBehaviour {
 	}
 
 	void Update () {
-		this.UpdateSelectedPlant ();
+		this.UpdateTimeScale ();
 		this.UpdateWaves ();
 		this.UpdateGorillaSpawner ();
 	}
 
-	void OnGUI() {
-		GUILayout.BeginHorizontal ();
-		GUILayout.Label("Wave: " + (GameStats.wave + 1).ToString () + " Seeds: " + GameStats.seeds.ToString ());
-		for (var i = 0; i < GameStats.plantList.Count; ++i) {
-			Plant plant = GameStats.plantList [i];
-			if (GUILayout.Toggle (this.selectedPlant == i, plant.name + " (" + plant.cost.ToString() + ")")) {
-				this.selectedPlant = i;
-			}
+	void UpdateTimeScale() {
+		switch (GameStats.state) {
+		case GameStats.GameState.MainMenu:
+			Time.timeScale = 1;
+			break;
+		case GameStats.GameState.InGame:
+			Time.timeScale = 1;
+			break;
+		case GameStats.GameState.Pause:
+			Time.timeScale = 0;
+			break;
+		case GameStats.GameState.GameOver:
+			Time.timeScale = 0;
+			break;
+		case GameStats.GameState.LevelComplete:
+			Time.timeScale = 0;
+			break;
+		default:
+			break;
 		}
-		GUILayout.EndHorizontal ();
-	}
-
-	void UpdateSelectedPlant() {
-		if (GameStats.plantList == null || GameStats.plantList.Count == 0) {
-			return;
-		}
-
-		GameStats.selectedPlant = GameStats.plantList [this.selectedPlant];
 	}
 
 	void UpdateWaves() {
@@ -80,10 +78,6 @@ public class GameBehavior : MonoBehaviour {
 				}
 				return;
 			}
-
-			// Show GUI
-			this.tooltipHelper.SetText ("Wave " + (GameStats.wave + 1).ToString());
-			this.tooltipHelper.Draw();
 
 			// Reset Timer
 			this.nextWaveTime = this.waves[GameStats.wave].time;

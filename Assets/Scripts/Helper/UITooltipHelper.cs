@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class UITooltipHelper : MonoBehaviour {
 
+	public GUISkin skin;
+	public bool visible = true;
+
 	private string labelText;
 	private Color labelColor = Color.white;
-	private int labelFontSize = 72;
+	private int labelFontSize = 150;
 	private float labelFadingSpeed = 0.02f;
 	private float labelFadingRate = 0.1f;
 	private float labelAlpha;
 
 	void OnGUI() {
+		if (!this.visible) {
+			return;
+		}
+
 		this.labelColor.a = this.labelAlpha;
-		GUIStyle style = new GUIStyle ();
+		GUIStyle style = new GUIStyle(skin.label);
+		style.font = skin.font;
 		style.normal.textColor = this.labelColor;
 		style.alignment = TextAnchor.MiddleCenter;
 		style.fontSize = this.labelFontSize;

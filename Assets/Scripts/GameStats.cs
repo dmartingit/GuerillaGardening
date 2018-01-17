@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class GameStats {
 
-	public enum GameState {InGame, GameOver, LevelComplete};
+	public enum GameState {MainMenu, InGame, Pause, GameOver, LevelComplete};
 
 	public static GameState state;
 

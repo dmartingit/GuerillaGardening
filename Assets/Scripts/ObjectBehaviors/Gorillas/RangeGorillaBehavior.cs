@@ -2,7 +2,7 @@
 
 public class RangeGorillaBehavior : GorillaBehavior {
 
-	private new Collider collider;
+	private Collider collider;
 	private Animator animator;
 	private float attackTimer;
 

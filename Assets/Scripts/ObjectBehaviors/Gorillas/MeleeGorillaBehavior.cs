@@ -2,7 +2,7 @@
 
 public class MeleeGorillaBehavior : GorillaBehavior {
 
-	private new Collider collider;
+	private Collider collider;
 	private Animator animator;
 	private GameObject hittedGameObject;
 	private float attackTimer;
