@@ -1,12 +1,6 @@
 ﻿using UnityEngine;
 
 public class BananaBehavior : MonoBehaviour {
-	
-	void Start () {	
-	}
-
-	void Update () {
-	}
 
 	void OnCollisionEnter (Collision col) {
 		var go = col.gameObject;

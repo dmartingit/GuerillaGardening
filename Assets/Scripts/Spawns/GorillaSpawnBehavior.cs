@@ -1,12 +1,6 @@
 ﻿using UnityEngine;
 
 public class GorillaSpawnBehavior : MonoBehaviour {
-	
-	void Start () {	
-	}
-
-	void Update () {	
-	}
 
 	public void Spawn() {
 		var gorillaList = GameStats.waveList [GameStats.wave].gorillas;

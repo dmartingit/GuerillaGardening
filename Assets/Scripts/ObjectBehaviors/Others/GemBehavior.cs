@@ -8,8 +8,5 @@ public class GemBehavior : MonoBehaviour {
 		GameStats.seeds += this.gem.seeds;
 		Destroy (this.gameObject, this.gem.lifeTime);
 	}
-	
-	void Update () {
-	}
 
 }

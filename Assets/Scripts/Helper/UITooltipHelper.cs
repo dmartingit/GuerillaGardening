@@ -11,12 +11,6 @@ public class UITooltipHelper : MonoBehaviour {
 	private float labelFadingRate = 0.1f;
 	private float labelAlpha;
 
-	void Start () {
-	}
-
-	void Update () {
-	}
-
 	void OnGUI() {
 		this.labelColor.a = this.labelAlpha;
 		GUIStyle style = new GUIStyle ();

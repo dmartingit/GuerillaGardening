@@ -4,9 +4,6 @@ public class PlantSpawnBehavior : MonoBehaviour {
 
 	private bool canPlant;
 
-	void Start () {	
-	}
-
 	void Update () {
 		// Check if there is smth already planted
 		if (Physics.Raycast (this.transform.position, this.transform.up, 1f)) {
