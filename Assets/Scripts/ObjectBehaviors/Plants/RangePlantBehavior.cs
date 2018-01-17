@@ -2,7 +2,7 @@
 
 public class RangePlantBehavior : PlantBehavior {
 	
-	private Collider collider;
+	private new Collider collider;
 	private Animator animator;
 	private float attackTimer;
 

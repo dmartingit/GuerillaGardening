@@ -2,7 +2,7 @@
 
 public class MeleePlantBehavior : PlantBehavior {
 
-	private Collider collider;
+	private new Collider collider;
 	private Animator animator;
 	private GameObject hittedGameObject;
 	private float attackTimer;
