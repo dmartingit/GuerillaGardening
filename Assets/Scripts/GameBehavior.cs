@@ -10,6 +10,7 @@ public class GameBehavior : MonoBehaviour {
 	public List<Wave> waves;
 	public List<Banana> bananas;
 
+	private bool waitToNextWave;
 	private float nextWaveTime;
 	private float gorillaSpawnTimer;
 	
@@ -65,22 +66,30 @@ public class GameBehavior : MonoBehaviour {
 			return;
 		}
 
+		if (this.waitToNextWave) {
+			var gorillas = GameObject.FindGameObjectsWithTag ("Gorilla");
+			if (gorillas.Length == 0) {
+				// set wait flag
+				this.waitToNextWave = false;
+
+				// Next Wave
+				++GameStats.wave;
+
+				// Do not do shit if last wave is done
+				if (GameStats.wave == this.waves.Count) {
+					return;
+				}
+
+				// Reset Timer
+				this.nextWaveTime = this.waves[GameStats.wave].time;
+			}
+			return;
+		}
+
 		this.nextWaveTime -= Time.deltaTime;
 		if (this.nextWaveTime < 0) {
-			// Next Wave
-			++GameStats.wave;
-
-			// Do not do shit if last wave is done
-			if (GameStats.wave == this.waves.Count) {
-				var gorillas = GameObject.FindGameObjectsWithTag ("Gorilla");
-				if (gorillas.Length == 0) {
-					GameStats.state = GameStats.GameState.LevelComplete;
-				}
-				return;
-			}
-
-			// Reset Timer
-			this.nextWaveTime = this.waves[GameStats.wave].time;
+			// Set wait flag
+			this.waitToNextWave = true;
 		}
 	}
 
@@ -90,6 +99,10 @@ public class GameBehavior : MonoBehaviour {
 		}
 
 		if (GameStats.wave == GameStats.waveList.Count) {
+			return;
+		}
+
+		if (this.waitToNextWave) {
 			return;
 		}
 
