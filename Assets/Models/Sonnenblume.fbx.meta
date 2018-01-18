@@ -1,80 +1,74 @@
 fileFormatVersion: 2
 guid: 17b72c99fc3f58a45880c7e5f1a41cd3
-timeCreated: 1515915118
+timeCreated: 1516274757
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: Armature.plant
     100002: bottom
-    100004: con.eyes
-    100006: con.eyes.l
-    100008: con.eyes.l_end
-    100010: con.eyes.r
-    100012: con.eyes.r_end
-    100014: eyeball.l
-    100016: eyeball.l_end
-    100018: eyeball.r
-    100020: eyeball.r_end
-    100022: leaf.bottom
-    100024: leaf.bottom_end
-    100026: leaf.left
-    100028: leaf.left_end
-    100030: leaf.right
-    100032: leaf.right_end
-    100034: leave.top
-    100036: leave.top_end
-    100038: //RootNode
+    100004: Camera
+    100006: con.eyes
+    100008: con.eyes.l
+    100010: con.eyes.l_end
+    100012: con.eyes.r
+    100014: con.eyes.r_end
+    100016: eyeball.l
+    100018: eyeball.l_end
+    100020: eyeball.r
+    100022: eyeball.r_end
+    100024: leaf.bottom
+    100026: leaf.bottom_end
+    100028: leaf.left
+    100030: leaf.left_end
+    100032: leaf.right
+    100034: leaf.right_end
+    100036: leave.top
+    100038: leave.top_end
     100040: Plant
-    100042: Plant_MeshPart0
-    100044: Plant_MeshPart1
-    100046: root.head
-    100048: root1
-    100050: root2
-    100052: root3
-    100054: root4
-    100056: Camera
-    100058: Point
+    100042: Point
+    100044: root.head
+    100046: root1
+    100048: root2
+    100050: root3
+    100052: root4
+    100054: //RootNode
     400000: Armature.plant
     400002: bottom
-    400004: con.eyes
-    400006: con.eyes.l
-    400008: con.eyes.l_end
-    400010: con.eyes.r
-    400012: con.eyes.r_end
-    400014: eyeball.l
-    400016: eyeball.l_end
-    400018: eyeball.r
-    400020: eyeball.r_end
-    400022: leaf.bottom
-    400024: leaf.bottom_end
-    400026: leaf.left
-    400028: leaf.left_end
-    400030: leaf.right
-    400032: leaf.right_end
-    400034: leave.top
-    400036: leave.top_end
-    400038: Plant
-    400040: //RootNode
-    400042: Plant_MeshPart0
-    400044: Plant_MeshPart1
-    400046: root.head
-    400048: root1
-    400050: root2
-    400052: root3
-    400054: root4
-    400056: Camera
-    400058: Point
+    400004: Camera
+    400006: con.eyes
+    400008: con.eyes.l
+    400010: con.eyes.l_end
+    400012: con.eyes.r
+    400014: con.eyes.r_end
+    400016: eyeball.l
+    400018: eyeball.l_end
+    400020: eyeball.r
+    400022: eyeball.r_end
+    400024: leaf.bottom
+    400026: leaf.bottom_end
+    400028: leaf.left
+    400030: leaf.left_end
+    400032: leaf.right
+    400034: leaf.right_end
+    400036: leave.top
+    400038: leave.top_end
+    400040: Plant
+    400042: Point
+    400044: root.head
+    400046: root1
+    400048: root2
+    400050: root3
+    400052: root4
+    400054: //RootNode
     2000000: Camera
-    4300000: Plant_MeshPart0
-    4300002: Plant_MeshPart1
-    4300004: Plant
-    7400000: Armature.plant|IDLE
+    4300000: Plant
+    7400000: SUN
+    7400002: Armature.plant|IDLE
+    7400004: Armature.plant|SUN
     9500000: //RootNode
     10800000: Point
-    13700000: Plant_MeshPart0
-    13700002: Plant_MeshPart1
-    13700004: Plant
+    13700000: Plant
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -137,6 +131,34 @@ ModelImporter:
       takeName: Armature.plant|IDLE
       firstFrame: 0
       lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.plant|SUN
+      takeName: Armature.plant|SUN
+      firstFrame: 0
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
