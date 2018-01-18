@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/PanzerTest.unity
-=======
 - path: Assets/Scenes/debugLevel.unity
->>>>>>> 0c1f05f286691873efdc4dfdd5ca3e4b30f4f6ae
   isLoaded: 1
   isActive: 1

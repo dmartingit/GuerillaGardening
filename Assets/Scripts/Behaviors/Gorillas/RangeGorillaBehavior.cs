@@ -53,6 +53,7 @@ public class RangeGorillaBehavior : GorillaBehavior {
 			var go = Instantiate (this.gorilla.bullet.model, centerPos, Quaternion.Euler (new Vector3 (0, -90, 0))).gameObject;
 			var bulletScript = go.GetComponent (typeof(BulletBehavior)) as BulletBehavior;
 			bulletScript.bullet = this.gorilla.bullet;
+			bulletScript.hitTag = "Plant";
 		}
 	}
 
