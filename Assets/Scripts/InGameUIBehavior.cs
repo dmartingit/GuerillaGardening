@@ -117,6 +117,15 @@ public class InGameUIBehavior : MonoBehaviour {
 	}
 
 	void showGameStats() {
+#if UNITY_IOS
+		if (GUILayout.Button ("Menu")) {
+			if (GameStats.state == GameStats.GameState.InGame) {
+				GameStats.state = GameStats.GameState.Pause;
+			} else if (GameStats.state == GameStats.GameState.Pause) {
+				GameStats.state = GameStats.GameState.InGame;
+			}
+		}
+#endif
 		GUILayout.Label ("Wave: " + (GameStats.wave + 1).ToString () + " Seeds: " + GameStats.seeds.ToString ());
 	}
 
@@ -174,6 +183,7 @@ public class InGameUIBehavior : MonoBehaviour {
 	void renderLevelCompleteMenu (int id) {
 		GUILayout.Label ("Level Complete");
 		if (GUILayout.Button ("Continue")) {
+			GameStats.state = GameStats.GameState.MainMenu;
 			SceneManager.LoadScene (this.nextLevelName);
 		}
 
