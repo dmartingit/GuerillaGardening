@@ -3,11 +3,13 @@
 public class GeneratorPlantBehavior : PlantBehavior {
 
 	private float gemSpawnTimer;
-	private Renderer rend;
+	private new Collider collider;
+	private Animator animator;
 	
 	protected override void Start () {
 		base.Start ();
-		this.rend = this.gameObject.GetComponentInChildren<Renderer> ();
+		this.collider = GetComponentInChildren<Collider> ();
+		this.animator = GetComponent<Animator> ();
 		this.gemSpawnTimer = this.plant.gemSpawnRate;
 	}
 
@@ -16,12 +18,18 @@ public class GeneratorPlantBehavior : PlantBehavior {
 
 		this.gemSpawnTimer -= Time.deltaTime;
 
+		// Reset Generate Animation
+		this.animator.SetBool ("Generate", false);
+
 		if (this.gemSpawnTimer < 0) {
-			Vector3 pos = this.rend.bounds.center;
-			pos.x += this.rend.bounds.extents.x;
+			Vector3 pos = this.collider.bounds.center;
+			pos.x += this.collider.bounds.extents.x;
 			var go = Instantiate (this.plant.gem.model, pos, Quaternion.identity).gameObject;
 			var gemScript = go.GetComponent (typeof(GemBehavior)) as GemBehavior;
 			gemScript.gem = this.plant.gem;
+
+			// Generate Animation
+			this.animator.SetBool ("Generate", true);
 
 			// Reset Timer
 			this.gemSpawnTimer = this.plant.gemSpawnRate;

@@ -125,6 +125,14 @@ public class InGameUIBehavior : MonoBehaviour {
 				GameStats.state = GameStats.GameState.InGame;
 			}
 		}
+#elif UNITY_ANDROID
+		if (GUILayout.Button ("Menu")) {
+			if (GameStats.state == GameStats.GameState.InGame) {
+				GameStats.state = GameStats.GameState.Pause;
+			} else if (GameStats.state == GameStats.GameState.Pause) {
+				GameStats.state = GameStats.GameState.InGame;
+			}
+		}
 #endif
 		GUILayout.Label ("Wave: " + (GameStats.wave + 1).ToString () + " Seeds: " + GameStats.seeds.ToString ());
 	}

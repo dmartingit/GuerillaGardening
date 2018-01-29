@@ -9,6 +9,12 @@ public class BulletBehavior : MonoBehaviour {
 
 	void Start () {
 		this.destroyingRange = this.transform.position.x + (this.transform.forward.x * this.bullet.range);
+
+		var audio = this.gameObject.AddComponent<AudioSource> ();
+		if (this.bullet.sound != null) {
+			audio.clip = this.bullet.sound;
+			audio.Play ();
+		}
 	}
 
 	void Update () {
